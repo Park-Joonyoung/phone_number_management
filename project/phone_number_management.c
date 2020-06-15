@@ -51,6 +51,7 @@ int main(void)
 			print_all(data, _msize(data) / sizeof(Person));
 			break;
 		default:
+			printf("\n";
 			break;
 		}
 
@@ -110,8 +111,8 @@ void insert(Person *data, size_t datasize)
 	int i;
 	enum {FALSE, TRUE};
 
-	for (i = 0; isempty(data, i) == FALSE; ++i) {						// finds an empty place of the least index
-		if (i > datasize - 1) {											// allocates additional memory if it is needed
+	for (i = 0; isempty(data, i) == FALSE; ++i) {				// finds an empty place of the least index
+		if (i > datasize - 1) {						// allocates additional memory if it is needed
 			datasize += 5;
 			data = (Person *)realloc(data, sizeof(Person)*datasize);
 			clear_data(data, datasize - 5, datasize);
